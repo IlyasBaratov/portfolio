@@ -6,7 +6,7 @@ import {
   useTransform,
 } from "framer-motion";
 import type { Project } from "../types";
-import { LiveProjectButton } from "./Buttons";
+import { ProjectLinkButton } from "./Buttons";
 
 interface ProjectCardProps {
   project: Project;
@@ -29,16 +29,23 @@ export function ProjectCard({ project, index, totalCards }: ProjectCardProps) {
   );
 
   return (
-    <div ref={containerRef} className="relative h-[85vh]">
+    <div
+      ref={containerRef}
+      className="project-card sticky h-[85vh]"
+      style={{
+        top: `calc(var(--project-card-top) + ${index * 28}px)`,
+        zIndex: index + 1,
+      }}
+    >
       <motion.article
-        className="project-card sticky overflow-hidden rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 text-[#D7E2EA] sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+        className="overflow-hidden rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 text-[#D7E2EA] sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
         style={{
-          top: `calc(var(--project-card-top) + ${index * 28}px)`,
           scale: shouldReduceMotion ? 1 : animatedScale,
           transformOrigin: "top center",
+          willChange: shouldReduceMotion ? "auto" : "transform",
         }}
       >
-        <div className="mb-5 grid grid-cols-[auto_1fr] items-center gap-x-5 gap-y-3 sm:mb-7 sm:grid-cols-[auto_1fr_auto] md:gap-x-8">
+        <div className="mb-4 grid grid-cols-[auto_1fr] items-center gap-x-5 gap-y-3 sm:mb-5 md:grid-cols-[auto_minmax(0,1fr)_auto] md:gap-x-8">
           <p className="font-black leading-none text-[clamp(3rem,10vw,8.75rem)]">
             {project.number}
           </p>
@@ -50,37 +57,27 @@ export function ProjectCard({ project, index, totalCards }: ProjectCardProps) {
               {project.name}
             </h3>
           </div>
-          <LiveProjectButton
-            className="col-start-2 mt-1 justify-self-start sm:col-start-auto sm:mt-0 sm:justify-self-end"
-            href={project.href}
-          />
+          <div className="col-span-2 flex flex-wrap gap-2 sm:gap-3 md:col-span-1 md:justify-self-end">
+            {project.liveUrl ? (
+              <ProjectLinkButton href={project.liveUrl} kind="live" />
+            ) : null}
+            {project.githubUrl ? (
+              <ProjectLinkButton href={project.githubUrl} kind="github" />
+            ) : null}
+          </div>
         </div>
 
-        <div className="grid grid-cols-[2fr_3fr] gap-2 sm:gap-3 md:gap-4">
-          <div className="flex flex-col gap-2 sm:gap-3 md:gap-4">
-            <img
-              className="h-[clamp(130px,16vw,230px)] w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              src={project.images[0]}
-              alt={`${project.name} detail one`}
-              loading="lazy"
-              decoding="async"
-            />
-            <img
-              className="h-[clamp(160px,22vw,340px)] w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-              src={project.images[1]}
-              alt={`${project.name} detail two`}
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <img
-            className="h-full min-h-0 w-full rounded-[40px] object-cover sm:rounded-[50px] md:rounded-[60px]"
-            src={project.images[2]}
-            alt={`${project.name} primary artwork`}
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
+        <p className="mb-5 max-w-5xl text-[clamp(0.78rem,1.15vw,1.05rem)] font-light leading-relaxed text-[#D7E2EA]/75 sm:mb-6">
+          {project.description}
+        </p>
+
+        <img
+          className="h-[clamp(210px,34vw,470px)] w-full rounded-[40px] object-cover object-top sm:rounded-[50px] md:rounded-[60px]"
+          src={project.image}
+          alt={`${project.name} project preview`}
+          loading="lazy"
+          decoding="async"
+        />
       </motion.article>
     </div>
   );

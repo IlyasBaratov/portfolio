@@ -7,7 +7,9 @@ export interface Service {
 export interface Project {
   number: string;
   name: string;
-  category: "Client" | "Personal";
-  images: readonly [string, string, string];
-  href?: string;
+  category: string;
+  description: string;
+  image: string;
+  liveUrl?: string;
+  githubUrl?: string;
 }
