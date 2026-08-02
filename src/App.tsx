@@ -10,6 +10,9 @@ import { marqueeImages, projects, services } from "./data";
 const portraitUrl =
   "https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png";
 
+const projectBackgroundUrl =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_171521_25968ba2-b594-4b32-aab7-f6b69398a6fa.mp4";
+
 const aboutText =
   "With more than five years of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!";
 
@@ -283,18 +286,36 @@ function ServicesSection() {
 }
 
 function ProjectsSection() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section
       id="projects"
-      className="relative z-10 -mt-10 rounded-t-[40px] bg-[#0C0C0C] px-5 pb-28 pt-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:pb-36 sm:pt-24 md:-mt-14 md:rounded-t-[60px] md:px-10 md:pb-48 md:pt-32"
+      className="relative z-10 -mt-10 isolate rounded-t-[40px] bg-[#0C0C0C] px-5 pb-28 pt-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:pb-36 sm:pt-24 md:-mt-14 md:rounded-t-[60px] md:px-10 md:pb-48 md:pt-32"
     >
-      <FadeIn y={40}>
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px]">
+        <video
+          className="sticky top-0 h-screen w-full object-cover opacity-[0.55]"
+          autoPlay={!shouldReduceMotion}
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          tabIndex={-1}
+        >
+          <source src={projectBackgroundUrl} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-[#0C0C0C]/[0.35]" />
+      </div>
+
+      <FadeIn y={40} className="relative z-10">
         <h2 className="hero-heading mb-16 text-center text-[clamp(3rem,12vw,10rem)] font-black uppercase leading-none tracking-tight sm:mb-20 md:mb-28">
           Project
         </h2>
       </FadeIn>
 
-      <div className="mx-auto max-w-[1440px]">
+      <div className="relative z-10 mx-auto max-w-[1440px]">
         {projects.map((project, index) => (
           <ProjectCard
             key={project.number}
