@@ -1,4 +1,4 @@
-import { Download, ExternalLink, Mail } from "lucide-react";
+import { Download, ExternalLink, Github, Mail } from "lucide-react";
 
 interface LinkButtonProps {
   href?: string;
@@ -67,38 +67,33 @@ export function ResumeButton({ href, className = "" }: ResumeButtonProps) {
 }
 
 const projectClasses =
-  "inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#D7E2EA] px-8 py-3 text-sm font-medium uppercase tracking-widest text-[#D7E2EA] transition-colors duration-200 sm:px-10 sm:py-3.5 sm:text-base enabled:hover:bg-[#D7E2EA]/10 disabled:cursor-not-allowed disabled:opacity-60";
+  "inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#D7E2EA] px-5 py-2.5 text-xs font-medium uppercase tracking-widest text-[#D7E2EA] transition-colors duration-200 hover:bg-[#D7E2EA]/10 sm:px-6 sm:py-3 sm:text-sm md:px-8";
 
-export function LiveProjectButton({ href, className = "" }: LinkButtonProps) {
-  const content = (
-    <>
-      <span>Live Project</span>
-      <ExternalLink aria-hidden="true" size={18} strokeWidth={1.8} />
-    </>
-  );
+interface ProjectLinkButtonProps {
+  href: string;
+  kind: "live" | "github";
+  className?: string;
+}
 
-  if (href) {
-    return (
-      <a
-        className={`${projectClasses} ${className}`}
-        href={href}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {content}
-      </a>
-    );
-  }
+export function ProjectLinkButton({
+  href,
+  kind,
+  className = "",
+}: ProjectLinkButtonProps) {
+  const isGithub = kind === "github";
+  const Icon = isGithub ? Github : ExternalLink;
+  const label = isGithub ? "GitHub" : "Live Site";
 
   return (
-    <button
+    <a
       className={`${projectClasses} ${className}`}
-      type="button"
-      disabled
-      aria-label="Live project link coming soon"
-      title="Live project link coming soon"
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`${label} (opens in a new tab)`}
     >
-      {content}
-    </button>
+      <span>{label}</span>
+      <Icon aria-hidden="true" size={18} strokeWidth={1.8} />
+    </a>
   );
 }

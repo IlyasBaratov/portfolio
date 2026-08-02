@@ -60,32 +60,48 @@ export const services: Service[] = [
 export const projects: Project[] = [
   {
     number: "01",
-    name: "Nextlevel Studio",
-    category: "Client",
-    images: [
-      "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055344_5eff02e0-87a5-41ce-b64f-eb08da8f33db.png&w=1280&q=85",
-      "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055431_11d841fd-8b41-46a5-82e4-b04f2407a7d8.png&w=1280&q=85",
-      "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055451_e317bf2d-28d4-48cc-86b0-6f72f25b6327.png&w=1280&q=85",
-    ],
+    name: "Sober Driver Dashboard",
+    category: "Full-Stack Web App",
+    description:
+      "Sober Driver is a full-stack web application designed to help users request safe rides from verified sober drivers, reducing risks associated with impaired driving. The platform features a user-friendly interface where riders can register, request a driver, and track ride status in real-time. The backend, built with Spring Boot, handles authentication, trip management, and secure data persistence through PostgreSQL. The RESTful API enables seamless communication between the backend and a React-based frontend, providing dynamic updates for ride requests and driver availability.",
+    image: "/projects/sober-driver-dashboard.png",
+    githubUrl: "https://github.com/IlyasBaratov/SpringBootDriverProject",
   },
   {
     number: "02",
-    name: "Aura Brand Identity",
-    category: "Personal",
-    images: [
-      "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85",
-      "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85",
-      "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85",
-    ],
+    name: "Weather Analytics",
+    category: "Cloud Analytics",
+    description:
+      "A FastAPI-based Weather Analytics Platform integrated with the OpenWeather API to deliver real-time and forecast weather data with persistent storage, clean architecture, and a lightweight frontend.",
+    image: "/projects/weather-analytics.png",
+    liveUrl: "https://app-weather-analytics.azurewebsites.net/",
+    githubUrl: "https://github.com/IlyasBaratov/WeatherAnalytics",
   },
   {
     number: "03",
-    name: "Solaris Digital",
-    category: "Client",
-    images: [
-      "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85",
-      "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85",
-      "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85",
-    ],
+    name: "Arduino Labyrinth Escaping Robot",
+    category: "Embedded Robotics",
+    description:
+      "Autonomous Labyrinth-Solving Robot built from the ground up using Arduino Uno, L293D motor driver, ultrasonic sensors, and a custom 4-wheel drive chassis. Programmed to detect obstacles, map paths, and navigate complex mazes without human input. Integrated Java-Arduino serial communication for real-time control and data logging.",
+    image: "/projects/arduino-labyrinth-robot.jpg",
+    githubUrl: "https://github.com/IlyasBaratov/ArduinoProject",
+  },
+  {
+    number: "04",
+    name: "Saquito Shop web",
+    category: "E-Commerce",
+    description:
+      "Artisan florals and handcrafted scents, with every bouquet made to order and every perfume blended by hand.",
+    image: "/projects/saquito-shop.png",
+    liveUrl: "https://www.saquitoshop.com/",
+  },
+  {
+    number: "05",
+    name: "Djiboutian American Community Web",
+    category: "Community Platform",
+    description:
+      "We bring Djiboutian-Americans together through cultural events, social activities, and educational resources, creating meaningful connections and lasting impact in Seattle.",
+    image: "/projects/djiboutian-american-community.png",
+    liveUrl: "https://djiboutarian-american-community.vercel.app/",
   },
 ];
