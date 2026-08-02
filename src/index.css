@@ -34,6 +34,7 @@ body {
 button,
 a {
   font: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -52,7 +53,15 @@ section[id] {
 }
 
 .project-card {
-  --project-card-top: 6rem;
+  --project-card-offset: var(--project-card-mobile-offset);
+  --project-card-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .project-card {
+    --project-card-offset: var(--project-card-desktop-offset);
+    --project-card-top: 6rem;
+  }
 }
 
 @media (min-width: 768px) {

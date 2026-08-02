@@ -1,12 +1,12 @@
 import type { Project, Service } from "./types";
 
 export const marqueeImages = [
-  "gifs\\arduino-autonomous-robot-preview.gif",
-  "gifs\\djiboutian-community-preview.gif",
-  "gifs\\saquito-shop-preview.gif",
-  "gifs\\sober-driver-preview.gif",
-  "gifs\\weather-analytics-preview.gif",
-  "gifs\\kss-lounge-preview.gif",
+  "/gifs/arduino-autonomous-robot-preview.gif",
+  "/gifs/djiboutian-community-preview.gif",
+  "/gifs/saquito-shop-preview.gif",
+  "/gifs/sober-driver-preview.gif",
+  "/gifs/weather-analytics-preview.gif",
+  "/gifs/kss-lounge-preview.gif",
   /*
   "https://motionsites.ai/assets/hero-vitara-preview-Cjz2QYyU.gif",
   "https://motionsites.ai/assets/hero-terra-preview-BFjrCr7T.gif",
