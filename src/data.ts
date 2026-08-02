@@ -1,12 +1,13 @@
 import type { Project, Service } from "./types";
 
 export const marqueeImages = [
-  "https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif",
-  "https://motionsites.ai/assets/hero-codenest-preview-Cgppc2qV.gif",
-  "https://motionsites.ai/assets/hero-vex-ventures-preview-BczMFIiw.gif",
-  "https://motionsites.ai/assets/hero-stellar-ai-v2-preview-DjvxjG3C.gif",
-  "https://motionsites.ai/assets/hero-asme-preview-B_nGDnTP.gif",
-  "https://motionsites.ai/assets/hero-transform-data-preview-Cx5OU29N.gif",
+  "gifs\\arduino-autonomous-robot-preview.gif",
+  "gifs\\djiboutian-community-preview.gif",
+  "gifs\\saquito-shop-preview.gif",
+  "gifs\\sober-driver-preview.gif",
+  "gifs\\weather-analytics-preview.gif",
+  "gifs\\kss-lounge-preview.gif",
+  /*
   "https://motionsites.ai/assets/hero-vitara-preview-Cjz2QYyU.gif",
   "https://motionsites.ai/assets/hero-terra-preview-BFjrCr7T.gif",
   "https://motionsites.ai/assets/hero-skyelite-preview-DHaZIgUv.gif",
@@ -22,38 +23,39 @@ export const marqueeImages = [
   "https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif",
   "https://motionsites.ai/assets/hero-luminex-preview-CxOP7ce6.gif",
   "https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif",
+  */
 ] as const;
 
 export const services: Service[] = [
   {
     number: "01",
-    name: "3D Modeling",
+    name: "Full-Stack Web Development",
     description:
-      "Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations.",
+      "Custom, responsive websites and web applications built with React, FastAPI, Spring Boot, and modern development tools.",
   },
   {
     number: "02",
-    name: "Rendering",
+    name: "Business Websites & Admin Dashboards",
     description:
-      "High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life.",
+      "Professional websites with easy-to-use dashboards that let business owners manage products, images, menus, content, and customer information.",
   },
   {
     number: "03",
-    name: "Motion Design",
+    name: "API & Database Development",
     description:
-      "Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences.",
+      "Secure backend systems, REST APIs, authentication, and database integration using PostgreSQL, MySQL, SQLite, and third-party services.",
   },
   {
     number: "04",
-    name: "Branding",
+    name: "Cloud Deployment & DevOps",
     description:
-      "Crafting cohesive visual identities -- from logos to full brand systems -- that communicate a clear and memorable presence.",
+      "Application deployment, domain setup, HTTPS, Docker configuration, CI/CD, and cloud hosting through AWS, Azure, Vercel, Render, and Linux servers.",
   },
   {
     number: "05",
-    name: "Web Design",
+    name: "AI Integration & Automation",
     description:
-      "Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience.",
+      "Intelligent features powered by AI, including chatbots, content automation, data analysis, recommendation systems, and AI-assisted business workflows.",
   },
 ];
 

@@ -64,7 +64,7 @@ function HeroSection() {
           className="transition-opacity duration-200 hover:opacity-70"
           href="#services"
         >
-          Price
+          MY EXPERTISE
         </a>
         <a
           className="transition-opacity duration-200 hover:opacity-70"
@@ -247,7 +247,7 @@ function ServicesSection() {
     >
       <FadeIn>
         <h2 className="mb-16 text-center text-[clamp(3rem,12vw,10rem)] font-black uppercase leading-none tracking-tight sm:mb-20 md:mb-28">
-          Services
+          My Expertise
         </h2>
       </FadeIn>
 
