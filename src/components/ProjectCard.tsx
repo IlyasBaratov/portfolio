@@ -29,13 +29,20 @@ export function ProjectCard({ project, index, totalCards }: ProjectCardProps) {
   );
 
   return (
-    <div ref={containerRef} className="relative h-[85vh]">
+    <div
+      ref={containerRef}
+      className="project-card sticky h-[85vh]"
+      style={{
+        top: `calc(var(--project-card-top) + ${index * 28}px)`,
+        zIndex: index + 1,
+      }}
+    >
       <motion.article
-        className="project-card sticky overflow-hidden rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 text-[#D7E2EA] sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
+        className="overflow-hidden rounded-[40px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 text-[#D7E2EA] sm:rounded-[50px] sm:p-6 md:rounded-[60px] md:p-8"
         style={{
-          top: `calc(var(--project-card-top) + ${index * 28}px)`,
           scale: shouldReduceMotion ? 1 : animatedScale,
           transformOrigin: "top center",
+          willChange: shouldReduceMotion ? "auto" : "transform",
         }}
       >
         <div className="mb-5 grid grid-cols-[auto_1fr] items-center gap-x-5 gap-y-3 sm:mb-7 sm:grid-cols-[auto_1fr_auto] md:gap-x-8">
