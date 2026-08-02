@@ -57,7 +57,8 @@ export function ResumeButton({ href, className = "" }: ResumeButtonProps) {
     <a
       className={`inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#D7E2EA] bg-[#D7E2EA] px-8 py-3 text-xs font-medium uppercase tracking-widest text-[#0C0C0C] transition-transform duration-200 hover:scale-[1.03] sm:px-10 sm:py-3.5 sm:text-sm md:px-12 md:py-4 md:text-base ${className}`}
       href={href}
-      download="Ilyas-Baratov-Resume.pdf"
+      target="_blank"
+      rel="noreferrer"
     >
       <Download aria-hidden="true" size={18} strokeWidth={2} />
       <span>Download My Resume</span>

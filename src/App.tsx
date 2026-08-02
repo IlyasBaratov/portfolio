@@ -8,8 +8,7 @@ import { Magnet } from "./components/Magnet";
 import { ProjectCard } from "./components/ProjectCard";
 import { marqueeImages, projects, services } from "./data";
 
-const portraitUrl =
-  "https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png";
+const portraitUrl = "/ilyas-graduation.jpg";
 
 const aboutText =
   "Results-driven Software Engineer with hands-on experience building and deploying production-ready web applications and backend systems. Strong background in Java, Spring Boot, Python, FastAPI, JavaScript, SQL, and cloud platforms. Creator of a full-stack Weather Analytics platform integrating multiple third-party APIs with async processing and persistent storage, deployed on Microsoft Azure. Experienced in system design, API integration, and cloud deployment, with growing expertise in AWS and AI. Proven collaborator with strong problem-solving skills and a passion for scalable software.";
@@ -89,7 +88,7 @@ function HeroSection() {
         </FadeIn>
       </div>
 
-      <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-[280px] -translate-x-1/2 -translate-y-1/2 sm:bottom-0 sm:top-auto sm:w-[360px] sm:translate-y-0 md:w-[440px] lg:w-[520px]">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-[220px] -translate-x-1/2 -translate-y-1/2 sm:bottom-0 sm:top-auto sm:w-[280px] sm:translate-y-0 md:w-[340px] lg:w-[390px]">
         <FadeIn delay={0.6} y={30}>
           <Magnet
             padding={150}
@@ -98,21 +97,16 @@ function HeroSection() {
             inactiveTransition="transform 0.6s ease-in-out"
           >
             <img
-              className="block h-auto w-full select-none"
+              className="block h-auto w-full select-none rounded-[32px] object-cover object-top shadow-[0_28px_80px_rgba(0,0,0,0.5)] sm:rounded-[40px]"
               src={portraitUrl}
-              alt="Ilyas, 3D creator and full-stack developer"
+              alt="Ilyas Baratov at graduation"
               decoding="async"
             />
           </Magnet>
         </FadeIn>
       </div>
 
-      <div className="relative z-20 mt-auto flex items-end justify-between gap-4 px-6 pb-7 sm:px-8 sm:pb-8 md:px-10 md:pb-10">
-        <FadeIn delay={0.35} y={20}>
-          <p className="max-w-[160px] text-[clamp(0.75rem,1.4vw,1.5rem)] font-light uppercase leading-snug tracking-wide text-[#D7E2EA] sm:max-w-[220px] md:max-w-[260px]">
-            a 3d creator driven by crafting striking and unforgettable projects
-          </p>
-        </FadeIn>
+      <div className="relative z-20 mt-auto flex items-end justify-end px-6 pb-7 sm:px-8 sm:pb-8 md:px-10 md:pb-10">
         <FadeIn delay={0.5} y={20}>
           <ContactButton href="#contact" />
         </FadeIn>
@@ -286,31 +280,33 @@ function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="relative z-10 -mt-10 isolate rounded-t-[40px] bg-[#0C0C0C] px-5 pb-28 pt-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 sm:pb-36 sm:pt-24 md:-mt-14 md:rounded-t-[60px] md:px-10 md:pb-48 md:pt-32"
+      className="relative z-10 -mt-10 isolate rounded-t-[40px] bg-[#0C0C0C] sm:-mt-12 sm:rounded-t-[50px] md:-mt-14 md:rounded-t-[60px]"
     >
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px]">
+      <div className="pointer-events-none sticky top-0 z-0 h-screen overflow-hidden rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px]">
         <div
-          className="sticky top-0 h-screen w-full bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/turkmen.jpg')" }}
         />
         <div className="absolute inset-0 bg-[#0C0C0C]/[0.42]" />
       </div>
 
-      <FadeIn y={40} className="relative z-10">
-        <h2 className="hero-heading mb-16 text-center text-[clamp(3rem,12vw,10rem)] font-black uppercase leading-none tracking-tight sm:mb-20 md:mb-28">
-          Project
-        </h2>
-      </FadeIn>
+      <div className="relative z-10 -mt-[100vh] px-5 pb-28 pt-20 sm:px-8 sm:pb-36 sm:pt-24 md:px-10 md:pb-48 md:pt-32">
+        <FadeIn y={40}>
+          <h2 className="hero-heading mb-16 text-center text-[clamp(3rem,12vw,10rem)] font-black uppercase leading-none tracking-tight sm:mb-20 md:mb-28">
+            Project
+          </h2>
+        </FadeIn>
 
-      <div className="relative z-10 mx-auto max-w-[1440px]">
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={project.number}
-            project={project}
-            index={index}
-            totalCards={projects.length}
-          />
-        ))}
+        <div className="mx-auto max-w-[1440px]">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={project.number}
+              project={project}
+              index={index}
+              totalCards={projects.length}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
