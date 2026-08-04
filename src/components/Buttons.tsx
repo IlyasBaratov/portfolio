@@ -6,7 +6,7 @@ interface LinkButtonProps {
 }
 
 const contactClasses =
-  "inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 py-3 text-[0.72rem] font-medium uppercase tracking-[0.16em] text-white transition-transform duration-200 sm:px-10 sm:py-3.5 sm:text-sm sm:tracking-widest md:px-12 md:py-4 md:text-base enabled:hover:scale-[1.03] disabled:cursor-not-allowed disabled:opacity-80";
+  "inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 text-xs font-medium uppercase tracking-widest text-white transition-transform duration-200 sm:px-10 sm:py-3.5 sm:text-sm md:px-12 md:py-4 md:text-base enabled:hover:scale-[1.03] disabled:cursor-not-allowed disabled:opacity-80";
 
 export function ContactButton({ href, className = "" }: LinkButtonProps) {
   const style = {
@@ -55,7 +55,7 @@ interface ResumeButtonProps {
 export function ResumeButton({ href, className = "" }: ResumeButtonProps) {
   return (
     <a
-      className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-[#D7E2EA] bg-[#D7E2EA] px-7 py-3 text-[0.7rem] font-medium uppercase tracking-[0.14em] text-[#0C0C0C] transition-transform duration-200 hover:scale-[1.03] sm:px-10 sm:py-3.5 sm:text-sm sm:tracking-widest md:px-12 md:py-4 md:text-base ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#D7E2EA] bg-[#D7E2EA] px-8 py-3 text-xs font-medium uppercase tracking-widest text-[#0C0C0C] transition-transform duration-200 hover:scale-[1.03] sm:px-10 sm:py-3.5 sm:text-sm md:px-12 md:py-4 md:text-base ${className}`}
       href={href}
       target="_blank"
       rel="noreferrer"
@@ -67,7 +67,7 @@ export function ResumeButton({ href, className = "" }: ResumeButtonProps) {
 }
 
 const projectClasses =
-  "inline-flex min-h-11 items-center justify-center gap-1.5 rounded-full border border-[#D7E2EA]/75 px-4 py-2 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-[#D7E2EA] transition-colors duration-200 hover:bg-[#D7E2EA]/10 sm:min-h-0 sm:gap-2 sm:border-2 sm:px-6 sm:py-3 sm:text-sm sm:tracking-widest md:px-8";
+  "inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#D7E2EA] px-5 py-2.5 text-xs font-medium uppercase tracking-widest text-[#D7E2EA] transition-colors duration-200 hover:bg-[#D7E2EA]/10 sm:px-6 sm:py-3 sm:text-sm md:px-8";
 
 interface ProjectLinkButtonProps {
   href: string;
@@ -93,7 +93,7 @@ export function ProjectLinkButton({
       aria-label={`${label} (opens in a new tab)`}
     >
       <span>{label}</span>
-      <Icon aria-hidden="true" className="h-4 w-4 sm:h-[18px] sm:w-[18px]" strokeWidth={1.8} />
+      <Icon aria-hidden="true" size={18} strokeWidth={1.8} />
     </a>
   );
 }
