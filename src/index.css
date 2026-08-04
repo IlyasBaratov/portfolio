@@ -34,6 +34,7 @@ body {
 button,
 a {
   font: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -52,11 +53,36 @@ section[id] {
 }
 
 .project-card {
-  --project-card-top: 6rem;
+  --project-card-offset: var(--project-card-phone-offset);
+  --project-card-top: 1rem;
+}
+
+.project-summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .project-card {
+    --project-card-offset: var(--project-card-laptop-offset);
+    --project-card-top: 4rem;
+  }
 }
 
 @media (min-width: 768px) {
   .project-card {
+    --project-card-top: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-card {
+    --project-card-top: 5.5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .project-card {
+    --project-card-offset: var(--project-card-wide-offset);
     --project-card-top: 8rem;
   }
 }
