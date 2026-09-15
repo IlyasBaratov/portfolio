@@ -80,7 +80,7 @@ section[id] {
   }
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 1800px) {
   .project-card {
     --project-card-offset: var(--project-card-wide-offset);
     --project-card-top: 8rem;
