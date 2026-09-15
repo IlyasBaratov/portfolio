@@ -106,4 +106,22 @@ export const projects: Project[] = [
     image: "/projects/djiboutian-american-community.png",
     liveUrl: "https://djiboutarian-american-community.vercel.app/",
   },
+  {
+    number: "06",
+    name: "Linua Chocolates",
+    category: "Business Website",
+    description:
+      "A portfolio website for master chocolatier Liliya Shakhatova, showcasing her chocolate creations, craft, awards, press, and certificates.",
+    image: "/projects/linua-chocolates.png",
+    liveUrl: "https://www.linuachocolates.com/",
+  },
+  {
+    number: "07",
+    name: "Fitbit & Google Health Platform",
+    category: "Health Data & AI API",
+    description:
+      "A Dockerized Python platform that collects Fitbit and Google Health data, stores health metrics in InfluxDB, visualizes them in Grafana, and provides health and AI analysis APIs.",
+    image: "/projects/fitbit-health-api.png",
+    githubUrl: "https://github.com/IlyasBaratov/Fitbit-superset-backend",
+  },
 ];
