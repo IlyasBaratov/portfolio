@@ -121,7 +121,9 @@ export const projects: Project[] = [
     category: "Health Data & AI API",
     description:
       "A Dockerized Python platform that collects Fitbit and Google Health data, stores health metrics in InfluxDB, visualizes them in Grafana, and provides health and AI analysis APIs.",
-    image: "/projects/fitbit-app.jpeg",
+    image: "/projects/fitbit-app.jpg",
     githubUrl: "https://github.com/IlyasBaratov/Fitbit-superset-backend",
+    liveUrl: "/projects/cheetah-0.0.2.apk",
+    
   },
 ];
